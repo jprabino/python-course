@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PYTHON</h1>
+					<h3>Curso introductorio</h3>
+					<p>
+						<small>Autor: Juan Pablo Rabino / <a href="mailto:jrabino@conae.gov.ar?Subject=Consulta%20curso%20Python">jrabino@conae.gov.ar</a>//<a href="mailto:jprabino@gmail.com?Subject=Consulta%20curso%20Python">jprabino@gmail.com</a></small>
+					</p>
+				</section>
+
+				<section id='whypython'>   
+					<h2>¿Por qué Python?</h2>
+                    <h3 class='fragment'>Fácil</h3>
+                    <ul>
+						<li class='fragment'>Expresivo</li>
+					    <li class='fragment'>Sintaxis simple</li>
+						<li class='fragment'>Legible</li>
+                    </ul>
+                    					
+				</section>
+                <section id='whypython1'>   
+					<h2>¿Por qué Python?</h2>
+                    <h3 class='fragment'>Libre</h3>
+                    <ul>
+						<li class='fragment'>Licencia PSFL, estilo BSD</li>
+					    <li class='fragment'>Compatible con GPL</li>
+                    </ul>
+                    
+				</section>
+                <section id='whypython2'>   
+					<h2>¿Por qué Python?</h2>
+                    <h3 class='fragment'>Extensible</h3>
+                    <ul>
+						<li class='fragment'>De por sí. Extensa biblioteca standard</li>
+					    <li class='fragment'>Forkeable dese C. Todo lo que está escrito para C/C++ se puede "importar" a Python.</li>
+					    <li class='fragment'>Todo</li>
+                    </ul>					
+				</section>
+                <section id='whypython3'>   
+					<h2>¿Por qué Python?</h2>
+                    <p class='fragment'>Python hace que lo simple sea fácil de hacer. </p>
+                    <p class='fragment'>Y lo complicado sea posible.</p>
+                </section>
+                
+				<!-- Example of nested vertical slides -->
+				<section>
+                    <section>
+                        <h2>Primeros Pasos</h2>
+                        <h3>Obteniendo el intérprete</h3>
+                        <ul>
+                        <li>Linux: Es <em>nativo</em>, está incluido en cualquier distribución de linux.</li>
+                        <li>Windows: <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
+                        <li>Mac OS X: <a href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx/</a></li>
+                        </ul>
+                    </section>
+					<section>
+						<h2>Primeros Pasos</h2>
+                        <p>Python es un lenguaje de <strong>scripting</strong>.</p>
+                        <p>Es <em>intepretado</em>, en lugar de ser compilado.</p>
+						<p>
+                            <pre>
+                                <code class="bash" data-trim contenteditable>$ python
+Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 5+6
+11
+</code>
+</pre>
+                    </section>
+                    <section>
+						<h2>Primeros Pasos</h2>
+                            <pre><code class='python'> &gt;&gt;&gt;11*'multiplicando un string'
+'multiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un stringmultiplicando un string'</code></pre>
+                    </section>
+                    <section>
+						<h2>Primeros Pasos</h2>
+					<pre><code class="bash" data-trim contenteditable>
+&gt;&gt;&gt; primer_numero=6.0
+&gt;&gt;&gt; primer_numero
+6.0
+&gt;&gt;&gt; type(primer_numero)
+class 'float'
+&gt;&gt;&gt; type(5)
+class 'int'
+&gt;&gt;&gt;
+                            </code></pre>
+                    </section>
+					<section>
+						<h2>Primeros Pasos</h2>
+						<pre>
+                          <code class="bash" data-trim contenteditable>&gt;&gt;&gt;string_a_repetir = 'Poné los Rolling Stones\n'
+&gt;&gt;&gt; print(primer_numero * string_a_repetir)
+Poné los Rolling Stones
+Poné los Rolling Stones
+Poné los Rolling Stones
+Poné los Rolling Stones
+Poné los Rolling Stones
+Poné los Rolling Stones
+                        </code>
+                        </pre>
+					</section>
+                </section>
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li class="fragment">
+                            Numeros
+                            <ul class="fragment">
+                                <li>int: Enteros de precision ilimitada.</li>
+                                <li>float: Coma flotante.(equivalente al double de C.</li>
+                                <li>complex: numeros complejos (a + b<em>j</em>).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <ul>
+                        <li class="fragment">
+                            Operaciones sobre numeros
+                <table class="docutils" border="1">
+                <colgroup>
+                    <col width="30%">
+                    <col width="20%">
+                    <col width="30%">
+                    <col width="20%">
+                </colgroup>
+                <thead valign="bottom">
+                    <tr class="row-odd"><th class="head">Operation</th>
+                    <th class="head">Result</th>
+                    <th class="head">Operation</th>
+                    <th class="head">Result</th>
+                </tr>
+                </thead>
+                <tbody valign="top">
+                    <tr class="row-even"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code></td>
+                        <td>sum of <em>x</em> and <em>y</em></td><td><code class="docutils literal"><span class="pre">abs(x)</span></code></td>
+                    <td>absolute value or magnitude of
+                    <em>x</em></td>
+                    </tr>
+                    <tr class="row-odd"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code></td>
+                        <td>difference of <em>x</em> and <em>y</em></td>
+                        <td><code class="docutils literal"><span class="pre">int(x)</span></code></td>
+                        <td><em>x</em> converted to integer</td>
+                    </tr>
+                    <tr class="row-even"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code></td>
+                        <td>product of <em>x</em> and <em>y</em></td>
+                        <td><code class="docutils literal"><span class="pre">float(x)</span></code></td>
+                        <td><em>x</em> converted to floating point</td>
+                    </tr>
+                    <tr class="row-odd"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code></td>
+                        <td>quotient of <em>x</em> and <em>y</em></td>
+                        <td><code class="docutils literal"><span class="pre">complex(re,</span> <span class="pre">im)</span></code></td>
+                        <td>a complex number with real part
+                        <em>re</em>, imaginary part <em>im</em>.
+                        <em>im</em> defaults to zero.</td>
+                    </tr>
+                    <tr class="row-even"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">//</span> <span class="pre">y</span></code></td>
+                    <td>floored quotient of <em>x</em> and
+                    <em>y</em></td><td><code class="docutils literal"><span class="pre">c.conjugate()</span></code></td>
+                    <td>conjugate of the complex number
+                    <em>c</em></td>
+                    </tr>
+                    <tr class="row-odd"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code></td>
+                    <td>remainder of <code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code></td>
+                    <td><code class="docutils literal"><span class="pre">divmod(x,</span> <span class="pre">y)</span></code></td>
+                    <td>the pair <code class="docutils literal"><span class="pre">(x</span> <span class="pre">//</span> <span class="pre">y,</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">y)</span></code></td>
+                    </tr>
+                    <tr class="row-even"><td><code class="docutils literal"><span class="pre">-x</span></code></td>
+                    <td><em>x</em> negated</td><td><code class="docutils literal"><span class="pre">pow(x,</span> <span class="pre">y)</span></code></td>
+                    <td><em>x</em> to the power <em>y</em></td>
+                    </tr>
+                    <tr class="row-odd"><td><code class="docutils literal"><span class="pre">+x</span></code></td>
+                    <td><em>x</em> unchanged</td>
+                    <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code></td>
+                    <td><em>x</em> to the power <em>y</em></td>
+                    </tr>
+                </tbody>
+                </table>
+                </section>
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Numeros
+                            <ul class="fragment">
+                                <li>Tipos de numeros Adicionales: <em>fractions</em> para fracciones y <em>decimal</em> para enteros con precisión definida.</li>
+                                <li><em>Los booleanos son tratados como un tipo particular de entero.</em></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Secuencias
+                            <ul class="fragment">
+                                <li class="fragment">Listas: []. Las listas son secuencias mutables, usadas para guardar items homogeneos.<pre><code>l1 = ['esta','es',1,['lista',]]</code></pre></li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Secuencias
+                            <ul class="fragment">
+                                <li class="fragment">Tuplas: (). Las tuplas son secuencias inmutables, usadas para guardar colecciones de datos heterogeneos.<pre><code>t1 = (1,['una','lista'], 209.22, )</code></pre></li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Secuencias
+                            <ul class="fragment">
+                                <li class="fragment">Rango: range(n). Los rangos son secuencias de numeros,  usados para iterar en un loop. <pre><code>r1 = range(10)</code></pre></li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Operaciones sobre Secuencias</h2>
+                        <table border="1" class="docutils" id="index-20">
+                            <colgroup>
+                                <col width="38%">
+                                <col width="47%">
+                            </colgroup>
+                            <thead valign="bottom">
+                                <tr class="row-odd"><th class="head">Operation</th>
+                                <th class="head">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody valign="top">
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></code></td>
+                                    <td><code class="docutils literal"><span class="pre">True</span></code> if an item of <em>s</em> is
+                                    equal to <em>x</em>, else <code class="docutils literal"><span class="pre">False</span></code></td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">s</span></code></td>
+                                    <td><code class="docutils literal"><span class="pre">False</span></code> if an item of <em>s</em> is
+                                    equal to <em>x</em>, else <code class="docutils literal"><span class="pre">True</span></code></td>
+                                </tr>
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s</span> <span class="pre">+</span> <span class="pre">t</span></code></td>
+                                    <td>the concatenation of <em>s</em> and
+                                    <em>t</em></td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s</span> <span class="pre">*</span> <span class="pre">n</span></code> or
+                                    <code class="docutils literal"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">s</span></code></td>
+                                    <td>equivalent to adding <em>s</em> to
+                                    itself <em>n</em> times</td>
+                                </tr>
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s[i]</span></code></td>
+                                    <td><em>i</em>th item of <em>s</em>, origin 0</td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s[i:j]</span></code></td>
+                                    <td>slice of <em>s</em> from <em>i</em> to <em>j</em></td>
+                                </tr>
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s[i:j:k]</span></code></td>
+                                    <td>slice of <em>s</em> from <em>i</em> to <em>j</em>
+                                    with step <em>k</em></td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">len(s)</span></code></td>
+                                    <td>length of <em>s</em></td>
+                                </tr>
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">min(s)</span></code></td>
+                                    <td>smallest item of <em>s</em></td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">max(s)</span></code></td>
+                                    <td>largest item of <em>s</em></td>
+                                </tr>
+                                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s.index(x[,</span> <span class="pre">i[,</span> <span class="pre">j]])</span></code></td>
+                                    <td>index of the first occurrence
+                                    of <em>x</em> in <em>s</em> (at or after
+                                    index <em>i</em> and before index <em>j</em>)</td>
+                                </tr>
+                                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s.count(x)</span></code></td>
+                                    <td>total number of occurrences of
+                                    <em>x</em> in <em>s</em></td>
+                                </tr>
+                            </tbody>
+                </table>
+            </section>
+            <section>
+                    <h2>Operaciones sobre Secuencias <em>Mutables</em></h2>
+                        <table border="1" class="docutils" id="index-23">
+                <colgroup>
+                <col width="15%">
+                <col width="30%">
+                <col width="25%">
+                <col width="30%">
+                </colgroup>
+                <thead valign="bottom">
+                <tr class="row-odd"><th class="head">Operation</th>
+                <th class="head">Result</th>
+                <th class="head">Operation</th>
+                <th class="head">Result</th>
+                </thead>
+                <tbody valign="top">
+                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s[i]</span> <span class="pre">=</span> <span class="pre">x</span></code></td>
+                <td>item <em>i</em> of <em>s</em> is replaced by
+                    <em>x</em></td>
+                    <td><code class="docutils literal"><span class="pre">s.copy()</span></code></td>
+                <td>creates a shallow copy of <code class="docutils literal"><span class="pre">s</span></code>
+                (same as <code class="docutils literal"><span class="pre">s[:]</span></code>)</td>
+                </tr>
+                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s[i:j]</span> <span class="pre">=</span> <span class="pre">t</span></code></td>
+                <td>slice of <em>s</em> from <em>i</em> to <em>j</em>
+                is replaced by the contents of
+                the iterable <em>t</em></td><td><code class="docutils literal"><span class="pre">s.extend(t)</span></code> or
+                <code class="docutils literal"><span class="pre">s</span> <span class="pre">+=</span> <span class="pre">t</span></code></td>
+                <td>extends <em>s</em> with the
+                contents of <em>t</em> (for the
+                most part the same as
+                <code class="docutils literal"><span class="pre">s[len(s):len(s)]</span> <span class="pre">=</span> <span class="pre">t</span></code>)</td>
+                </tr>
+                <tr class="row-even"><td><code class="docutils literal"><span class="pre">del</span> <span class="pre">s[i:j]</span></code></td>
+                <td>same as <code class="docutils literal"><span class="pre">s[i:j]</span> <span class="pre">=</span> <span class="pre">[]</span></code></td>
+                    <td><code class="docutils literal"><span class="pre">s</span> <span class="pre">*=</span> <span class="pre">n</span></code></td>
+                <td>updates <em>s</em> with its contents
+                repeated <em>n</em> times</td>
+                </tr>
+                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s[i:j:k]</span> <span class="pre">=</span> <span class="pre">t</span></code></td>
+                <td>the elements of <code class="docutils literal"><span class="pre">s[i:j:k]</span></code>
+                are replaced by those of <em>t</em></td>
+                    <td><code class="docutils literal"><span class="pre">s.insert(i,</span> <span class="pre">x)</span></code></td>
+                <td>inserts <em>x</em> into <em>s</em> at the
+                index given by <em>i</em>
+                (same as <code class="docutils literal"><span class="pre">s[i:i]</span> <span class="pre">=</span> <span class="pre">[x]</span></code>)</td>
+                </tr>
+                <tr class="row-even"><td><code class="docutils literal"><span class="pre">del</span> <span class="pre">s[i:j:k]</span></code></td>
+                <td>removes the elements of
+                <code class="docutils literal"><span class="pre">s[i:j:k]</span></code> from the list</td><td><code class="docutils literal"><span class="pre">s.pop([i])</span></code></td>
+                <td>retrieves the item at <em>i</em> and
+                also removes it from <em>s</em></td>
+                </tr>
+                <tr class="row-odd"><td><code class="docutils literal"><span class="pre">s.append(x)</span></code></td>
+                <td>appends <em>x</em> to the end of the
+                sequence (same as
+                <code class="docutils literal"><span class="pre">s[len(s):len(s)]</span> <span class="pre">=</span> <span class="pre">[x]</span></code>)</td>
+                    <td><code class="docutils literal"><span class="pre">s.remove(x)</span></code></td>
+                <td>remove the first item from <em>s</em>
+                where <code class="docutils literal"><span class="pre">s[i]</span> <span class="pre">==</span> <span class="pre">x</span></code></td>
+                    
+                </tr>
+                <tr class="row-even"><td><code class="docutils literal"><span class="pre">s.clear()</span></code></td>
+                <td>removes all items from <code class="docutils literal"><span class="pre">s</span></code>
+                (same as <code class="docutils literal"><span class="pre">del</span> <span class="pre">s[:]</span></code>)</td>
+                    <td><code class="docutils literal"><span class="pre">s.reverse()</span></code></td>
+                <td>reverses the items of <em>s</em> in
+                place</td>
+                </tr>
+                </tbody>
+                </table>
+            </section>
+        </section>
+
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Secuencias de Texto
+                            <ul class="fragment">
+                                <li>str: <em>''</em> <em>""</em> <em>"""</em>. Secuencias de texto <strong>inmutables</strong>. Cuando son creadas con <em>"""</em> pueden contener varias lineas.</li>
+                                <pre><code>single_line_string = "The Path of the Righteous man..."
+quotes_within_string = "is beset on all sides by the 'inequities' of the selfish"
+quotes_within_string2 = 'and the "tyranny" of evil men'
+multiline_string = """Blessed is he who, 
+in the name of charity and good will, 
+shepherds the weak through the valley of the darkness."""
+                                </code></pre>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </section>
+            
+                <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Secuencias de Binarios
+                            <ul class="fragment">
+                                <li> bytes, bytearray: Manipulacion de arreglos de bytes.</li>
+                                <li> memoryview: Manipulacion de memoria de objetos.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                    <h2>Tipos de Datos</h2>
+                    <h4><a href="https://docs.python.org/3.5/library/stdtypes.html">https://docs.python.org/3.5/library/stdtypes.html</a></h4>
+                    <ul>
+                        <li>
+                            Mapeo
+                            <ul class="fragment">
+                                <li>dict: {}. Mapea cualquier elemento clave, a un objeto de cualquier tipo.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </section>
+                    
+                    <section>
+                    <h2>Tipos de Datos</h2>
+                        <h4>Mapeo</h4>
+                        <pre><code class='python' data-trim>
+                        #Defino funciones
+def respuesta_kyle(nombre):
+    print("{}, ven conmigo si quieres vivir".format(nombre))
+
+def respuesta_t1000(nombre):
+    print("{}, esta bien cariño, {} está bien. Dónde estas?".format(nombre, nombre))
+
+def respuesta_t800(nombre):
+    print("Hasta la vista, {}".format(nombre))
+    
+#Genero el diccionario pasandole como clave un elemento hasheable (str)
+#y como valor las funciones
+respuestas_terminator={'kyle': respuesta_kyle,
+                        't1000': respuesta_t1000,
+                        't800': respuesta_t800}
+
+#Llamo al diccionario.                        
+respuestas_terminator['kyle']('Sarah')
+                        </code></pre>
+                    </section>
+                    <section>
+                    <h2>Tipos de Datos</h2>
+                        <h4>Mapeo</h4>
+                        <pre><code class='python' data-trim>$ python 1.introduccion-mapping.py 
+Sarah, ven conmigo si quieres vivir
+                        </code></pre>
+                    </section>
+                    
+                </section>
+                <section>
+					<section>
+						<h2>Scripts - Sintaxis</h2>
+						<p>Para los desarrollos no usamos la <em>consola</em>.</p>
+                        <p>Guardamos el codigo en scripts con la extensión <strong><em>.py</em></strong></p>
+					</section>
+					<section>
+						<h2>Scripts - Sintaxis</h2>
+						<p>Para los desarrollos no usamos la <em>consola</em>.</p>
+                        <p>Guardamos el codigo en scripts con la extensión <strong><em>.py</em></strong></p>
+					</section>
+                    <section>
+                        <h4>Contenido de <em>1.introduccion-mirprimerscript.py</em></h4>
+                        <pre><code class='python' data-trim>print("""Fabienne: Who's Zed?
+Butch: Zed's dead, baby. Zed's dead.""")
+                        </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h4>Ejecutando <em>1.introduccion-mirprimerscript.py</em></h4>
+                        <pre><code data-trim>$ python 1.introduccion-miprimerscript.py 
+Fabienne: Who's Zed?
+Butch: Zed's dead, baby. Zed's dead.
+$
+                        </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+						<h2>Sintaxis</h2>
+                        <h3><em>'Indentacion'</em></h3>
+						<p>En Python no hay caracteres que separen los bloques de código, ya sea para definicion de funciones, clases o control de flujo.</p>
+						<p>Los bloques de código son separados por la <em>tabulacion/sangria o "indentación"</em></p>
+                        <p class="fragment">La recomendación es utilizar 4 espacios por "indentación".</p>                                                
+					</section>
+					<section>
+						<h2>Sintaxis</h2>
+                        <h3><em>'Indentacion'</em></h3>
+                 		<pre>
+                          <code class="hljs" data-trim contenteditable>def chequeo_si_es_verdadero(variable):
+    if variable == True:
+        print ("Verdadero")
+    else:
+        print ("Falso")
+                        </code>
+                        </pre>
+					</section>
+				</section>
+				<section>
+                    <section>
+					<h2>Control de Flujo</h2>
+					<p class='fragment'>
+						if/elif/else
+					</p>
+                    <pre class="fragment"><code class="python" data-trim>
+gato_schroedinger = 'Muerto'
+
+if gato_schroedinger is 'Vivo':
+    print("El Gato está vivo")
+
+elif gato_schroedinger is 'En la caja':
+    print("No puedo saber si el gato está vivo")
+
+else:
+    print("El gato no está vivo")
+                    </code>
+                    </pre>
+                    </section>
+                    <section>
+                    <h2>Control de Flujo</h2>
+					<p class='fragment'>
+						while
+					</p>
+                    <pre class="fragment"><code class="python" data-trim>
+cuento = 0
+
+while cuento &lt 20:
+    
+    print ("Voy por {}. Sigo contando...".format(cuento))
+    
+    cuento+=1
+
+print ("Llegué a {}. No sé contar más.".format(cuento))
+                    </code>
+                    </pre>
+                    </section>
+                    <section>
+                    <h2>Control de Flujo</h2>
+					<p class='fragment'>
+						while
+					</p>
+                    <pre class="fragment"><code class="python" data-trim>Voy por 0. Sigo contando...
+Voy por 1. Sigo contando...
+Voy por 2. Sigo contando...
+Voy por 3. Sigo contando...
+Voy por 4. Sigo contando...
+Voy por 5. Sigo contando...
+Voy por 6. Sigo contando...
+Voy por 7. Sigo contando...
+Voy por 8. Sigo contando...
+Voy por 9. Sigo contando...
+Voy por 10. Sigo contando...
+Voy por 11. Sigo contando...
+Voy por 12. Sigo contando...
+Voy por 13. Sigo contando...
+Voy por 14. Sigo contando...
+Voy por 15. Sigo contando...
+Voy por 16. Sigo contando...
+Voy por 17. Sigo contando...
+Voy por 18. Sigo contando...
+Voy por 19. Sigo contando...
+Llegué a 20. No sé contar más.
+                    </code>
+                    </pre>
+                    </section>
+                    <section>
+                    <h2>Control de Flujo</h2>
+					<p class='fragment'>
+						for
+					</p>
+                    <pre class="fragment"><code class="python" data-trim>
+
+iterable_con_cualquier_cosa = [3.234, 3-4, ['otro','iterable'], \
+                        objeto_propio, 'Y obviamente un string']
+
+for elemento in iterable_con_cualquier_cosa:
+    print(elemento)
+    
+#Equivalente a:
+for idx, elemento in enumerate(iterable_con_cualquier_cosa):
+    print(iterable_con_cualquier_cosa[idx])
+    
+                    </code>
+                    </pre>
+                    </section><section>
+                    <h2>Control de Flujo</h2>
+					<p class='fragment'>
+						for
+					</p>
+                    <pre class="fragment"><code class="python" data-trim>3.234
+-1
+['otro', 'iterable']
+&ltclass '__main__.ObjetoMio'&gt
+Y obviamente un string    
+                    </code>
+                    </pre>
+                    </section>
+                    
+				</section><section>
+                    <h2>Control de Flujo</h2>
+					<p class='fragment'>
+						for
+					</p>
+					<p class='fragment'> Iterar un diccionario <em>No es ordenado</em></p>
+                    <pre class="fragment"><code class="python" data-trim>                        
+for resp in respuestas_terminator:
+    print(resp)</code>
+                    </pre>
+                    <pre class="fragment"><code class="python" data-trim>                        
+t1000
+kyle
+t800                 </code>
+                    </pre>
+                    </section>    
+				</section>
+                <section>
+                    <section>
+                    <h2>Declaración de funciones</h2>
+                    <pre class="fragment"><code class="python" data-trim>                        
+def nombre_de_mi_funcion(argumento1, argumento2, argumento_opcional="valor_opcional"):
+    #Trabajo con las variables
+    return valor_de_retorno1, valor_de_retorno2
+</code>
+                    </pre>
+                    </section>
+                    <section>
+                    <h2>Declaración de funciones</h2>
+                        <ul>
+                        <li>Se pueden poner cualquier cantidad de argumentos</li>
+                        <li>Puede haber argumentos "opcionales" que tienen valores por defecto</li>
+                        <li>En Python <strong>todo</strong> es un objeto, con lo cual los pasajes son siempre por referencia.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Declaración de Objetos</h2>
+                    <pre class="fragment"><code class="python" data-trim>                        
+class UnaNuevaClase(HeredaDeEstaClase):
+
+    def __init__(self, argumento1, argumento2,..., argumento_opcional="valor_opcional"):
+        #inicializo la clase padre
+        super(UnaNuevaClase, self).__init__(argumento1, argumento2) 
+        #declaro una variable de clase
+        self.argumento1 = argumento1
+    
+    def metodo_una_nueva_clase(self, argumento_opcional="valor opcional")
+        #Trabajo con las variables
+        return valor_de_retorno1, valor_de_retorno2
+</code>
+                    </pre>
+                    </section>
+                    <section>
+                    <h2>Declaración de Objetos</h2>
+                    <pre class="fragment"><code class="python" data-trim>objeto_instancia_de_una_nueva_clase = UnaNuevaClase(argumento1, argumento2, 'este_es_el_opcional')
+objeto_instancia_de_una_nueva_clase.metodo_una_nueva_clase()
+                    </code>
+                    </pre>
+                    </section>
+                </section>
+                <section>
+                    <h1>Preguntas</h1>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

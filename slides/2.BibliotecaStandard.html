@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PYTHON</h1>
+					<h3>Curso introductorio</h3>
+					<p>
+						<small>Autor: Juan Pablo Rabino / <a href="mailto:jrabino@conae.gov.ar?Subject=Consulta%20curso%20Python">jrabino@conae.gov.ar</a>//<a href="mailto:jprabino@gmail.com?Subject=Consulta%20curso%20Python">jprabino@gmail.com</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Biblioteca Standard</h2>
+					<p>
+						Funciones que vienen dentro de la distribución standard de Python.
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>argparse</h2>
+                        <small><a href="https://docs.python.org/3/library/argparse.html">https://docs.python.org/3/library/argparse.html</a></small>
+						<p>Tomar argumentos de la linea de comandos.</p>
+						<p><em>parseo_argumentos.py</em></p>
+						<pre class="fragment"><code class="python" data-trim>import argparse
+
+parser = argparse.ArgumentParser(description='Listar los archivos de un directorio')
+parser.add_argument('path', type=str, nargs=1, help='path al directorio que debe ser listado')
+parser.add_argument('--recursive', dest='recursive', 
+                    help='indica si quiero que el listado sea recursivo')
+
+args = parser.parse_args()
+                    </code>
+                    </pre>
+					</section>
+					<section>
+						<h2>argparse</h2>
+						<p>Tomar argumentos de la linea de comandos.</p>
+						<p><em>parseo_argumentos.py</em></p>
+						<pre class="fragment"><code class="bash" data-trim>$python 2.stdlib-argparse.py --help
+usage: 2.stdlib-argparse.py [-h] [--recursive] path
+
+Listar los archivos de un directorio
+
+positional arguments:
+  path         path al directorio que debe ser listado
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --recursive  indica si quiero que el listado sea recursivo</code>
+                    </pre>
+					</section>
+					<section>
+						<h2>argparse</h2>
+						<p>Tomar argumentos de la linea de comandos.</p>
+						<p><em>parseo_argumentos.py</em></p>
+						<pre class="fragment"><code class="bash" data-trim>$ python 2.stdlib-argparse.py /home/conae/path_a_listar --recursive 
+Namespace(path=['/home/conae/path_a_listar'], recursive=True)</code>
+                    </pre>
+					</section>
+                    <section>
+						<h2>argparse</h2>
+						<p>Tomar argumentos de la linea de comandos.</p>
+						<p><em>parseo_argumentos.py</em></p>
+                        <p>Los argumentos luego en el objeto 'args' se acceden como <em>atributos</em></p>
+						<pre class="fragment"><code class="bash" data-trim>print (args.path,args.recursive)
+['/home/conae/path_a_listar'] True</code>
+                    </pre>
+					</section>
+				</section>
+				<section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Python tiene poderosas funciones para el listar, crear, mover, leer y escribir archivos.</p>					
+                    </section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Leer archivos</p>
+                        <pre class="fragment"><code class="python" data-trim>nuevo_archivo = open('/directorio/de/archivo/a/abrir.txt', 'r')
+print(nuevo_archivo.read())
+nuevo_archivo.close()</code>
+                    </pre>
+                        <p><em>nuevo_archivo</em> es un objeto 'archivo' (file object).</p>
+                    </section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Modos de apertura de archivos.</p>
+                        <pre class="fragment"><code class="python" data-trim>#Lo abre en modo escritura, poniendo el cursor en la primer posicion. (Sobrescribe)
+nuevo_archivo = open('/directorio/de/archivo/a/abrir.txt', <mark>'w'</mark>)
+#Lo abre en modo escritura pero añadiendo hacia el final.
+nuevo_archivo = open('/directorio/de/archivo/a/abrir.txt', 'a')
+</code>
+                    </pre>
+                    </section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Metodos para archivos</p>
+                        <pre class="fragment"><code class="python" data-trim>&gt&gt&gt nuevo_archivo.read()
+'este es todo el contenido de este archivo. Comprobalo llamando a "read()" otra vez.\n'
+&gt&gt&gt nuevo_archivo.read()
+''
+</code>
+                    </pre>
+                    </section>
+				</section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Metodos para archivos</p>
+                        <pre class="fragment"><code class="python" data-trim>&gt&gt&gt nuevo_archivo.readline()
+'Primera linea del archivo.\n'
+&gt&gt&gt nuevo_archivo.readline()
+'Segunda y última linea del archivo\n'
+&gt&gt&gt nuevo_archivo.readline()
+''
+</code>
+                    </pre>
+                    </section>
+				</section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Metodos para archivos</p>
+					<p>Pueden usarse como iterables</p>
+                        <pre class="fragment"><code class="python" data-trim>&gt&gt&gt for linea in nuevo_archivo:
+...     print(line, end='')
+...
+Primera linea del archivo.\n
+Segunda y última linea del archivo\n
+''
+</code>
+                    </pre>
+                    </section>
+                    <section>
+					<h2>Archivos: Entrada/Salida</h2>
+					<p>Metodos para archivos</p>
+					<p>El método <em>archivo.write(texto)</em> escribre el string <em>texto</em> al archivo <em>archivo</em> y devuelve la cantidad de caracteres escritos</p>
+                        <pre class="fragment"><code class="python" data-trim>&gt&gt&gt f.write('Esto es una prueba\n')
+19
+</code>
+                    </pre>
+                    </section>
+            <section>
+                    <section>
+					<h2>Archivos: Listar</h2>
+					<p>Metodos de "Filesystem"</p>
+                        <small><a href="https://docs.python.org/3/library/os">https://docs.python.org/3/library/os</a></small>
+					<p><em>os</em> y <em>os.path</em> son la parte de la libreria que permite el manejo del sistema de archivos</p>
+                    <p>Listar paths, concatenar paths, etc.</p>
+                    </section>
+                    <section>
+					<h2>Archivos: Listar</h2>
+					<p>Metodos de "Filesystem"</p>
+					<p><em>os.listdir(path)</em></p>
+					<p>Devuelve una lista con el contenido del directorio <em>path</em></p>
+                    <pre class="fragment"><code class="python" data-trim>&gt&gt&gt import os
+&gt&gt&gt os.listdir('.')
+['2.stdlib-argparse.py', '2.stdlib-fileio.py', '1.introduccion-mapping.py', '1.introduccion-miprimerscript.py', '1.stdlib-argparse.py', '1.introduccion-flow_control.py']
+&gt&gt&gt 
+</code>
+                    </pre>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.remove(path)</em></p>
+                        <p>Elimina el archivo indicado por <em>path</em></p>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.rmdir(path)</em></p>
+                        <p>Elimina el <em>directorio</em> indicado por <em>path</em></p>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.rmdir(path)</em></p>
+                        <p>Elimina el <em>directorio</em> indicado por <em>path</em></p>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.rmdir(path)</em></p>
+                        <p>Elimina el <em>directorio</em> indicado por <em>path</em></p>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.mkdir(path)</em></p>
+                        <p>Crea el <em>directorio</em> indicado por <em>path</em></p>
+                    </section>
+                    <section>
+                        <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.mkdirs(path)</em></p>
+                        <p>Crea el <em>directorio</em> indicado por <em>path</em> con todas las ramas necesarias</p>
+                    </section>
+                    <section>
+					   <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.path.join(path1,path2)</em></p>
+                        <p>Devuelve un path compuesto por los paths "path1" y "path2". Independientemente del OS</p>
+                        <p><strong>No verifica que el path resultante exista.</strong></p>
+                    </section>
+                    <section>
+					   <h2>Archivos/Directorios: Manejo</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.path.split(ejemplo_path)</em></p>
+                        <p>Devuelve una tupla con el directorio/archivo final de <em>ejemplo_path</em> y el path hasta llegar a éste.</p>
+                        <pre class="fragment"><code class="python" data-trim>&gt&gt&gt import os
+&gt&gt&gt os.path.split("/nuevo/path/al/archivo.txt")
+('/nuevo/path/al', 'archivo.txt')
+&gt&gt&gt 
+</code>
+                    </pre>
+                    </section>
+                    <section>
+                        <h2>Archivos: Listar</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.walk(path)</em></p>
+                        <p>Genera los nombres de archivo en un arbol de directorio "caminando" el arbol desde abajo hacia arriba o arriba hacia abajo.</p>
+                        <p>Para cada directorio el metodo devuelve un tupla de 3 valores (path_directorio, nombres_de_directorios, nombres_de_archivos)</p>
+                        <pre class="fragment"><code class="python" data-trim>for root, dirs, files in os.walk("/home/juan/Documents/miu-python"):
+    
+    for f in files:
+        print("Leyendo: {}".format(os.path.join(root,f)))
+        with open(os.path.join(root,f)) as openf:
+            print(openf.read())
+</code>
+                    </pre>
+                    </section>
+                    <section>
+                        <h2>Archivos: Listar</h2>
+                        <p>Metodos de "Filesystem"</p>
+                        <p><em>os.walk(path)</em></p>
+                        <pre class="fragment"><code class="python" data-trim>#Elimina todo lo que se encuentra debajo del directorio 'top'
+import os
+for root, dirs, files in os.walk(top, topdown=False):
+    for name in files:
+        os.remove(os.path.join(root, name))
+    for name in dirs:
+        os.rmdir(os.path.join(root, name))
+</code>
+                    </pre>
+                    </section>
+				</section>
+            <section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <small><a href=https://docs.python.org/3/library/stdtypes.html#textseq>https://docs.python.org/3/library/stdtypes.html#textseq</a></small>
+                    <p class="fragment">La clase "str" de Python. Métodos para la manipulación de cadenas de caracteres.</p>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Primero hay que ver que un string cualquiera en Python ya es un objeto, y como tal, tiene sus métodos de clase.</p>
+                    <pre class="fragment"><code class="python" data-trim>&gt&gt&gt "voy a hacer todo en mayusculas".upper()
+'VOY A HACER TODO EN MAYUSCULAS'
+&gt&gt&gt 
+</code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funciones Básicas</p>
+                    <ul>
+                        <li><strong>str.capitalize()</strong> Devuelve una copia con el primer caracter en mayuscula y el resto en minúscula</li>
+                        <li><strong>str.count(sub)</strong> Cuenta las ocurrencias del string 'sub' dentro del string 'str'</li>
+                        <li><strong>str.find(sub)//str.rfind()//str.index(sub)</strong>  Devuelve el primer índice de 'sub' dentro de 'str'.</li>
+                        <li><strong>str.isalpha()/str.isdecimal/str.islower()/str.isdigit()/str.isupper()</strong> Verificar el tipo de caracteres de una string.</li>
+                    </ul>
+                    
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funciones Básicas</p>
+                    <ul>
+                        <li><strong>str.lower()//str.upper()</strong> Devuelve una copia con todos los caracteres en minúscula/mayúscula</li>
+                        <li><strong>str.strip([chars])</strong> Devuelve una copia del string str sin los caracteres contenidos en [chars], o sin espacios si no se especifican.</li>
+                        <li><strong>str.zfill(width)</strong> Devuelve una copia del string str con un "padding" de '0' de tamaño <em>width</em></li>
+                    </ul>
+                    
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.join(iterable)</em></p>
+                    <p>Concatena los elementos de <em>iterable</em> mediante el string <em>str</em></p>
+                    <pre class="fragment"><code class="python" data-trim>&gt&gt&gt l1 = ('vamos', 'a', 'concatenar','!!!')
+&gt&gt&gt ' '.join(l1)
+'vamos a concatenar !!!'
+&gt&gt&gt '__'.join(l1)
+'vamos__a__concatenar__!!!'
+&gt&gt&gt '_1_'.join(l1)
+'vamos_1_a_1_concatenar_1_!!!'
+&gt&gt&gt 
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.split()</em></p>
+                    <pre class="fragment"><code class="python" data-trim>&gt&gt&gt '1,2,3'.split(',')
+['1', '2', '3']
+&gt&gt&gt '1,2,3'.split(',', maxsplit=1)
+['1', '2,3']
+&gt&gt&gt '1,2,,3,'.split(',')
+['1', '2', '', '3', '']
+</code>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.format()</em></p>
+                    <p>Realiza el formateo del string <em>str</em>. Los reemplazos son denotados con {}. Cada reemplazo puede contener un argumento posicional o un keyword.</p>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.format()</em></p>
+                    <small><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></small>
+                    <pre class="fragment"><code class="python" data-trim>&gt&gt&gt '{0}, {1}, {2}'.format('a', 'b', 'c')
+'a, b, c'
+&gt&gt&gt '{}, {}, {}'.format('a', 'b', 'c')  
+'a, b, c'
+&gt&gt&gt '{2}, {1}, {0}'.format('a', 'b', 'c')
+'c, b, a'
+&gt&gt&gt '{0}{1}{0}'.format('abra', 'cad')   # se pueden repetir los indices.
+'abracadabra'
+</code>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.format()</em></p>
+                    <small><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></small>
+                    <pre class="fragment"><code class="python" data-trim>>>> '{:+f}; {:+f}'.format(3.14, -3.14)  # mostrar siempre el signo
+'+3.140000; -3.140000'
+>>> '{: f}; {: f}'.format(3.14, -3.14)  # muestra un espacio para los positivos
+' 3.140000; -3.140000'
+>>> '{:-f}; {:-f}'.format(3.14, -3.14)  # solo muestra el menos -- idem '{:f}; {:f}'
+'3.140000; -3.140000'
+</code>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.format()</em></p>
+                    <small><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></small>
+                    <pre class="fragment"><code class="python" data-trim>>>> # format() también soporta datos binarios.
+>>> "int: {0:d};  hex: {0:x};  oct: {0:o};  bin: {0:b}".format(42)
+'int: 42;  hex: 2a;  oct: 52;  bin: 101010'
+>>> # with 0x, 0o, or 0b as prefix:
+>>> "int: {0:d};  hex: {0:#x};  oct: {0:#o};  bin: {0:#b}".format(42)
+'int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010'
+</code>
+                </section>
+                <section>
+                    <h2>Manejo de Strings</h2>
+                    <p>Funcion <em>str.format()</em></p>
+                    <small><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></small>
+                    <table border="1" class="docutils">
+<colgroup>
+<col width="13%">
+<col width="87%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">'e'</span></code></td>
+<td>Exponent notation. Prints the number in scientific
+notation using the letter ‘e’ to indicate the exponent.
+The default precision is <code class="docutils literal"><span class="pre">6</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">'E'</span></code></td>
+<td>Exponent notation. Same as <code class="docutils literal"><span class="pre">'e'</span></code> except it uses an
+upper case ‘E’ as the separator character.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">'f'</span></code></td>
+<td>Fixed point. Displays the number as a fixed-point
+number.  The default precision is <code class="docutils literal"><span class="pre">6</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">'F'</span></code></td>
+<td>Fixed point. Same as <code class="docutils literal"><span class="pre">'f'</span></code>, but converts <code class="docutils literal"><span class="pre">nan</span></code> to
+<code class="docutils literal"><span class="pre">NAN</span></code> and <code class="docutils literal"><span class="pre">inf</span></code> to <code class="docutils literal"><span class="pre">INF</span></code>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">'g'</span></code></td>
+<td><p class="first">General format.  For a given precision <code class="docutils literal"><span class="pre">p</span> <span class="pre">&gt;=</span> <span class="pre">1</span></code>,
+this rounds the number to <code class="docutils literal"><span class="pre">p</span></code> significant digits and
+then formats the result in either fixed-point format
+or in scientific notation, depending on its magnitude.</p>
+<p>The precise rules are as follows: suppose that the
+result formatted with presentation type <code class="docutils literal"><span class="pre">'e'</span></code> and
+precision <code class="docutils literal"><span class="pre">p-1</span></code> would have exponent <code class="docutils literal"><span class="pre">exp</span></code>.  Then
+if <code class="docutils literal"><span class="pre">-4</span> <span class="pre">&lt;=</span> <span class="pre">exp</span> <span class="pre">&lt;</span> <span class="pre">p</span></code>, the number is formatted
+with presentation type <code class="docutils literal"><span class="pre">'f'</span></code> and precision
+<code class="docutils literal"><span class="pre">p-1-exp</span></code>.  Otherwise, the number is formatted
+with presentation type <code class="docutils literal"><span class="pre">'e'</span></code> and precision <code class="docutils literal"><span class="pre">p-1</span></code>.
+In both cases insignificant trailing zeros are removed
+from the significand, and the decimal point is also
+removed if there are no remaining digits following it.</p>
+<p>Positive and negative infinity, positive and negative
+zero, and nans, are formatted as <code class="docutils literal"><span class="pre">inf</span></code>, <code class="docutils literal"><span class="pre">-inf</span></code>,
+<code class="docutils literal"><span class="pre">0</span></code>, <code class="docutils literal"><span class="pre">-0</span></code> and <code class="docutils literal"><span class="pre">nan</span></code> respectively, regardless of
+the precision.</p>
+<p class="last">A precision of <code class="docutils literal"><span class="pre">0</span></code> is treated as equivalent to a
+precision of <code class="docutils literal"><span class="pre">1</span></code>.  The default precision is <code class="docutils literal"><span class="pre">6</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">'G'</span></code></td>
+<td>General format. Same as <code class="docutils literal"><span class="pre">'g'</span></code> except switches to
+<code class="docutils literal"><span class="pre">'E'</span></code> if the number gets too large. The
+representations of infinity and NaN are uppercased, too.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">'n'</span></code></td>
+<td>Number. This is the same as <code class="docutils literal"><span class="pre">'g'</span></code>, except that it uses
+the current locale setting to insert the appropriate
+number separator characters.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">'%'</span></code></td>
+<td>Percentage. Multiplies the number by 100 and displays
+in fixed (<code class="docutils literal"><span class="pre">'f'</span></code>) format, followed by a percent sign.</td>
+</tr>
+<tr class="row-even"><td>None</td>
+<td>Similar to <code class="docutils literal"><span class="pre">'g'</span></code>, except that fixed-point notation,
+when used, has at least one digit past the decimal point.
+The default precision is as high as needed to represent
+the particular value. The overall effect is to match the
+output of <a class="reference internal" href="stdtypes.html#str" title="str"><code class="xref py py-func docutils literal"><span class="pre">str()</span></code></a> as altered by the other format
+modifiers.</td>
+</tr>
+</tbody>
+</table>
+                </section>
+            </section>
+
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
